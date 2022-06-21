@@ -1,0 +1,6 @@
+1. La pagina permite a un usuario registrarse si no encuantra alguno.
+2. Asigna una contrasena aleatoria.
+3. En el primer login obliga al cambio de contrasena.
+(Se realiza un envio por correo para el cambio de contrasena)
+4. la sesion sura yun maximo de 30 segundos sin uso.
+5. En la sesion aparece el nombre

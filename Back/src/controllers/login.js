@@ -1,5 +1,12 @@
-const validate = (req, res) => {
-    res.send("hi")
+const { connect } = require('../database/database')
+
+export const add = (req, res) => {
+
 }
 
-module.exports = {validate}
+export const getUsers = async (req, res) => {
+    const db = await connect();
+    const [rows] = await db.query("select * from user");
+    res.json(rows);
+}
+
