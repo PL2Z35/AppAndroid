@@ -1,0 +1,27 @@
+<link href="/css/styles.css" rel="stylesheet">
+
+<body class="text-center">
+    <main class="form-signin w-100 m-auto">
+        {{>message}}
+        <form method="post" action="/forgot/password/{{link.username}}">
+            <img class="mb-4"
+                src="https://w7.pngwing.com/pngs/544/1/png-transparent-computer-icons-login-icon-design-others-logo-silhouette-share-icon.png"
+                alt="" width="72" height="57">
+            <h1 class="h3 mb-3 fw-normal">Change Password ({{link.username}})</h1>
+            <div class="form-floating">
+                <input type="text" class="form-control" name="password1" placeholder="Password" required>
+                <label for="floatingPassword">Enter a password</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" name="password2" placeholder="Password" required>
+                <label for="floatingPassword">Repeat password</label>
+            </div>
+            <br>
+            <button class="w-100 btn btn-lg btn-success" type="submit">Save</button>
+            <div class="form-floating">
+                <a href="/">Sign in</a>
+            </div>
+            <p class="mt-5 mb-3 text-muted">&copy; Rojas–Plazas</p>
+        </form>
+    </main>
+</body>

@@ -4,3 +4,15 @@
 (Se realiza un envio por correo para el cambio de contrasena)
 4. la sesion sura yun maximo de 30 segundos sin uso.
 5. En la sesion aparece el nombre
+
+
+validar los 3 intentos
+links funcionar por un tiempo (links de bloqueo) (links de recuperacion)
+validar la session iniciada
+
+- 1. Crear un nuevo usuario sin pedir la contrasena (validar que tengan diferente nombre)
+- 2. Login de cada usuario
+- 3. Restablecer contrasena (Envio por correo) (Revision)
+- 4. 3 Intentos para cada usuario ((Recuperacion por correo)
+- 5. Validaciond e timepo de ejecucion del aplicativo
+6. Primera entrada pedir el cambio de contrasena

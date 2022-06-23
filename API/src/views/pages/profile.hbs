@@ -1,0 +1,10 @@
+<body>
+    {{>navbar}}
+    <br>
+    <br>
+    {{>message}}
+    {{#if notPass}}
+    <center><h1>Por favor cambie la contrasena</h1></center>
+    <center><a href="/change/password/{{user.username}}">Cambiar Contrasena</a></center>
+    {{/if}}
+</body>
