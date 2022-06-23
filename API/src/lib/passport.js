@@ -36,7 +36,7 @@ passport.use('local.signin', new LocalStrategy({
     if (rows.length > 0) {
         const user = rows[0];
         const validPassword = await helpers.matchPassword(password, user.password);
-        if (validPassword && parseInt(user.failedSessions) <= 3) {
+        if (validPassword && parseInt(user.failedSessions) <= 2) {
             await pool.query("update user set failedSessions = 0 where username = '" + user.username + "'")
             done(null, user, req.flash('success', 'Welcome ' + user.username));
         } else if (parseInt(user.failedSessions) <= 2) {

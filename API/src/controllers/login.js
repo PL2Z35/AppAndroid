@@ -53,6 +53,7 @@ const forgotPassword = async (req, res, next) => {
         if ((req.body.password1 == req.body.password2) && checkPassword(req.body.password1)) {
             const newPass = await helpers.encryptPassword(req.body.password1);
             await pool.query("update user set password = '" + newPass + "' where username='" + req.params.username + "'");
+            await pool.query("update user set failedSessions = 0 where username='" + req.params.username + "'");
             req.flash('success', 'modified password')
         } else {
             req.flash('message', 'Invalid password')
@@ -75,7 +76,7 @@ const signupView = async (req, res, next) => {
 }
 
 const profile = async (req, res, next) => {
-    req.session.cookie.expires = 10000;
+    req.session.cookie.expires = 20000;
     const pass = await pool.query("select * from user where username = '" + req.user.username + "'");
     if (await helpers.matchPassword(pass[0].username, pass[0].password)) {
         const notPass = "notPass";
